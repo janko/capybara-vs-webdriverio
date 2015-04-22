@@ -7,6 +7,7 @@ var browserSync = require('browser-sync');
 gulp.task('serve', function (done) {
   browserSync({
     ghostMode: false,
+    logLevel: 'silent',
     notify: false,
     open: false,
     port: 9000,

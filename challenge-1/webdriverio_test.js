@@ -15,7 +15,7 @@ describe('challenge 1', function () {
 
   before(function (done) {
     selenium.install({
-      logger: function (message) { console.log(message); }
+      logger: function (message) { }
     }, function () {
       selenium.start(function (err, child) {
         if (err) { throw (err); }

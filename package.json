@@ -8,11 +8,13 @@
   },
   "devDependencies": {
     "browser-sync": "^2.6.4",
+    "chromedriver": "^2.14.1",
     "gulp": "^3.8.11",
     "gulp-load-plugins": "^0.10.0",
     "gulp-mocha": "^2.0.1",
     "mocha": "^2.2.4",
     "phantomjs": "^1.9.16",
+    "selenium-standalone": "^4.4.0",
     "webdriverio": "^2.4.5"
   }
 }

@@ -1,19 +1,30 @@
 'use strict';
 
 var webdriverio = require('webdriverio');
+var selenium = require('selenium-standalone');
 var assert = require('assert');
 
 describe('challenge 1', function () {
-  this.timeout(2000);
+  this.timeout(999999);
   var client = {};
+  var clientOptions = {
+    desiredCapabilities: {
+      browserName: 'phantomjs',
+    }
+  };
 
   before(function (done) {
-    client = webdriverio.remote({
-      desiredCapabilities: {
-        browserName: 'phantomjs',
-      }
-    }).init(done)
-      .url('http://localhost:9000');
+    selenium.install({
+      logger: function (message) { console.log(message); }
+    }, function () {
+      selenium.start(function (err, child) {
+        if (err) { throw (err); }
+        selenium.child = child;
+        client = webdriverio.remote(clientOptions)
+          .init()
+          .url('http://localhost:9000', done);
+      });
+    });
   });
 
   it('tests adding github links', function (done) {
@@ -24,6 +35,8 @@ describe('challenge 1', function () {
         assert.equal(null, err);
         assert.notEqual(text.indexOf('current_user_url'), -1);
       })
-      .call(done);
+      .call(done, function () {
+        selenium.child.kill();
+      });
   });
 });

@@ -4,7 +4,7 @@ var webdriverio = require('webdriverio');
 var assert = require('assert');
 
 describe('challenge 1', function () {
-  this.timeout(99999999);
+  this.timeout(2000);
   var client = {};
 
   before(function (done) {

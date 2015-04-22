@@ -4,7 +4,7 @@ var gulp = require('gulp');
 var $ = require('gulp-load-plugins')();
 var browserSync = require('browser-sync');
 
-gulp.task('serve', function () {
+gulp.task('serve', function (done) {
   browserSync({
     ghostMode: false,
     notify: false,
@@ -14,10 +14,14 @@ gulp.task('serve', function () {
       baseDir: ['challenge-1']
     },
     ui: false
-  });
+  }, done);
 });
 
-gulp.task('test', ['serve'], function () {
-  gulp.src('challenge-*/**/*.js')
+gulp.task('selenium', ['serve'], function () {
+  return gulp.src('challenge-*/**/*.js')
     .pipe($.mocha());
+});
+
+gulp.task('test', ['selenium'], function () {
+  browserSync.exit();
 });

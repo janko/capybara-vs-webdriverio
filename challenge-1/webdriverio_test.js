@@ -19,8 +19,8 @@ describe('challenge 1', function () {
   it('tests adding github links', function (done) {
     client
       .click('<button>')
-      .waitForExist('<dt>')
-      .getText('<dt>', function (err, text) {
+      .waitForText('<dl>', 2000)
+      .getText('<dl>', function (err, text) {
         assert.equal(null, err);
         assert.notEqual(text.indexOf('current_user_url'), -1);
       })

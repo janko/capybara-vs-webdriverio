@@ -12,12 +12,12 @@ describe('challenge 1', function () {
       desiredCapabilities: {
         browserName: 'phantomjs',
       }
-    }).init(done);
+    }).init(done)
+      .url('http://localhost:9000');
   });
 
   it('tests adding github links', function (done) {
     client
-      .url('http://localhost:9000')
       .click('<button>')
       .waitForExist('<dt>')
       .getText('<dt>', function (err, text) {

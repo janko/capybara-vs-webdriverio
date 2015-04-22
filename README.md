@@ -2,10 +2,9 @@
 
 The goal of this project is to compare [Capybara](https://github.com/jnicklas/capybara)
 of the Ruby world and Webdriver.io of the Node.js world. The purpose is to
-prove that Webdriver.io is better, so that we reinforce my statement that frontend
-code written in JavaScript is always better than if it was written in Ruby.
-Because I really love Ruby, but I find it painful to write browser tests in it,
-and as a backend Rubyist I really don't want to.
+prove that Webdriver.io is better, in order to reinforce my statement that all
+frontend code should be written in JavaScript, so that everybody can just leave
+me out of browser testing and let me do my Ruby APIs.
 
 ## Implementation
 

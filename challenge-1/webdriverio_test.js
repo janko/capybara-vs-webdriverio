@@ -35,8 +35,11 @@ describe('challenge 1', function () {
         assert.equal(null, err);
         assert.notEqual(text.indexOf('current_user_url'), -1);
       })
-      .call(done, function () {
-        selenium.child.kill();
-      });
+      .call(done);
+  });
+
+  after(function (done) {
+    selenium.child.kill();
+    client.end(done);
   });
 });

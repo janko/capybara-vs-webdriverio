@@ -16,9 +16,18 @@ describe('challenge 1', function () {
   before(function (done) {
     selenium.install({
       logger: function (message) { }
-    }, function () {
+    }, function (err) {
+      if (err) {
+        done(err);
+        return;
+      }
+
       selenium.start(function (err, child) {
-        if (err) { throw (err); }
+        if (err) {
+          done(err);
+          return;
+        }
+
         selenium.child = child;
         client = webdriverio.remote(clientOptions)
           .init()

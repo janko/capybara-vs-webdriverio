@@ -9,7 +9,7 @@ describe('challenge 1', function () {
   var client = {};
   var clientOptions = {
     desiredCapabilities: {
-      browserName: 'phantomjs',
+      browserName: 'phantomjs'
     }
   };
 

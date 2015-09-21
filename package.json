@@ -4,17 +4,16 @@
     "node": ">=0.12.0"
   },
   "scripts": {
-    "test": "node_modules/.bin/gulp test"
+    "test": "gulp test"
   },
   "devDependencies": {
-    "browser-sync": "^2.6.4",
-    "chromedriver": "^2.14.1",
-    "gulp": "^3.8.11",
-    "gulp-load-plugins": "^0.10.0",
-    "gulp-mocha": "^2.0.1",
-    "mocha": "^2.2.4",
-    "phantomjs": "^1.9.16",
-    "selenium-standalone": "^4.4.0",
+    "babel-core": "^5.8.25",
+    "connect": "^3.4.0",
+    "gulp": "^3.9.0",
+    "gulp-webdriver": "^1.0.1",
+    "mocha": "^2.3.2",
+    "selenium-standalone": "^4.6.0",
+    "serve-static": "^1.10.0",
     "webdriverio": "^2.4.5"
   }
 }

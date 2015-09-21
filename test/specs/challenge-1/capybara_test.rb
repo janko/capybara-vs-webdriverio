@@ -7,7 +7,7 @@ require "capybara/poltergeist"
 require "roda"
 
 Roda.route do |r|
-  r.root { File.read("challenge-1/index.html") }
+  r.root { File.read("test/fixtures/challenge-1.html") }
 end
 
 Capybara.configure do |config|
